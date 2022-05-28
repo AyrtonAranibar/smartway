@@ -220,3 +220,27 @@ CRITICAL - 2022-05-23 01:32:18 --> include(../css.php): Failed to open stream: N
 #8 C:\xampp8\htdocs\practica\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #9 C:\xampp8\htdocs\practica\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #10 {main}
+CRITICAL - 2022-05-23 18:04:53 --> include(../css.php): Failed to open stream: No such file or directory
+#0 C:\xampp8\htdocs\smartway\app\Views\vehiculos\vehiculos_create.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'include(../css....', 'C:\\xampp8\\htdoc...', 7)
+#1 C:\xampp8\htdocs\smartway\app\Views\vehiculos\vehiculos_create.php(7): include()
+#2 C:\xampp8\htdocs\smartway\system\View\View.php(210): include('C:\\xampp8\\htdoc...')
+#3 C:\xampp8\htdocs\smartway\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#4 C:\xampp8\htdocs\smartway\system\Common.php(1089): CodeIgniter\View\View->render('vehiculos/vehic...', Array, true)
+#5 C:\xampp8\htdocs\smartway\app\Controllers\VehiculosController.php(16): view('vehiculos/vehic...')
+#6 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(832): App\Controllers\VehiculosController->crearVehiculos()
+#7 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VehiculosController))
+#8 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp8\htdocs\smartway\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-05-23 18:29:24 --> include(../css.php): Failed to open stream: No such file or directory
+#0 C:\xampp8\htdocs\smartway\app\Views\vehiculos\vehiculos_list.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'include(../css....', 'C:\\xampp8\\htdoc...', 7)
+#1 C:\xampp8\htdocs\smartway\app\Views\vehiculos\vehiculos_list.php(7): include()
+#2 C:\xampp8\htdocs\smartway\system\View\View.php(210): include('C:\\xampp8\\htdoc...')
+#3 C:\xampp8\htdocs\smartway\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#4 C:\xampp8\htdocs\smartway\system\Common.php(1089): CodeIgniter\View\View->render('vehiculos/vehic...', Array, true)
+#5 C:\xampp8\htdocs\smartway\app\Controllers\VehiculosController.php(12): view('vehiculos/vehic...', Array)
+#6 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(832): App\Controllers\VehiculosController->index()
+#7 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VehiculosController))
+#8 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp8\htdocs\smartway\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
