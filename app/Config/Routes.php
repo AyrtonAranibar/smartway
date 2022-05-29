@@ -49,6 +49,8 @@ $routes->get('/', 'Home::index');
 if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
+//login
+$routes->get('ingresar', 'Home::logeo');
 //usuarios
 $routes->get('listar_usuarios', 'UsuariosController::index');
 $routes->get('crear_usuario', 'UsuariosController::crearUsuario');
