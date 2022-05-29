@@ -9,16 +9,17 @@
 </head>
 <body>
     <div class="contenedor">
-        <h4>Ingresa tus datos</h4>
+        <h4>Autentificación</h4>
         <form action="" method="post">
             <label for="correo">Ingresa tu correo</label>
-            <input id="correo" name="correo" placeholder="ejemplo@mail.com">
-            <label for="correo">Ingresa contraseña</label>
-            <input id="correo" name="correo" placeholder="ejemplo@mail.com"><br>
-            <a><p>olvidé mi contraseña</p></a>
-            <input type="submit">
+            <input type="text" id="correo" name="correo" placeholder="ejemplo@mail.com" autocomplete="off">
+            <label for="contrasena">Ingresa contraseña</label>
+            <input type="password" id="contrasena" name="contrasena" placeholder="************" autocomplete="off"><br>
+            <a class="olvide"><p>olvidé mi contraseña</p></a>
+            <div class="buttons-content">
+            <input type="submit"><a href="<?php echo base_url() ?>/registrarse" class="registrarse-button">Registrarse</a>
+            </div>
         </form>
     </div>
-    <?php include('js.php')?>
 </body>
 </html>

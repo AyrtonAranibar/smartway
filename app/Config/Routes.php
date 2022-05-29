@@ -51,6 +51,7 @@ if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
 }
 //login
 $routes->get('ingresar', 'Home::logeo');
+$routes->get('registrarse', 'Home::autentificacion');
 //usuarios
 $routes->get('listar_usuarios', 'UsuariosController::index');
 $routes->get('crear_usuario', 'UsuariosController::crearUsuario');
