@@ -7,4 +7,4 @@
 <script src="<?php echo base_url() ?>/assets/js/util.js"></script>
 <script src="<?php echo base_url() ?>/assets/js/main.js"></script>
 <script src="<?php echo base_url() ?>/assets/js/jquery-1.12.4.min.js"></script>
-<!--<script src="<?php echo base_url() ?>/assets/bootstrap5/js/bootstrap.js"></script>-->
+<script src="<?php echo base_url() ?>/assets/bootstrap5/js/bootstrap.js"></script>

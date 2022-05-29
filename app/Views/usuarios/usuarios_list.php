@@ -8,5 +8,9 @@
 </head>
 <body>
     lista de usuarios
+
+
+
+    <?php include('js.php')?>
 </body>
 </html>
