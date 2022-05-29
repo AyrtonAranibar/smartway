@@ -9,5 +9,8 @@
 <body>
     lista de Vehiculos
     <?php print_r($vehiculos)?>
+
+    
+    <?php include('js.php')?>
 </body>
 </html>

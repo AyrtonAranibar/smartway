@@ -8,5 +8,9 @@
 </head>
 <body>
     vista de usuarios
+
+
+
+    <?php include('js.php')?>
 </body>
 </html>

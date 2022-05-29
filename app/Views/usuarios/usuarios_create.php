@@ -8,5 +8,9 @@
 </head>
 <body>
     creador de usuarios
+
+
+
+    <?php include('js.php')?>
 </body>
 </html>

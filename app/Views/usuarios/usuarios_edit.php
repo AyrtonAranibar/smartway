@@ -8,5 +8,10 @@
 </head>
 <body>
     edit de usuarios
+
+
+
+
+    <?php include('js.php')?>
 </body>
 </html>
