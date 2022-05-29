@@ -12,4 +12,8 @@ class Home extends BaseController
     {
         return view('login/logeo.php');
     }
+    public function autentificacion()
+    {
+        return view('login/registrarse.php');
+    }
 }

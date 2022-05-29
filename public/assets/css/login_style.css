@@ -37,15 +37,38 @@ label{
     font-size: large;
     font-weight:lighter;
 }
-input[type=submit]{
-    display:block;
-    margin-left:auto;
-    background-color:rgb(236, 236, 236);
+.buttons-content{
+    display: flex;
+    justify-content:space-between;
 }
-a{
+input[type=text],input[type=password]{
+    width: 100%;
+    color:rgb(236, 236, 236);
+}
+input[type=submit], .registrarse-button{
+    text-decoration: none;
+    background-color:rgb(236, 236, 236);
+    color: var(--azul);
+    border: 2px solid var(--azul);
+    padding:5px;
+    border-radius:3px;
+    font-weight: lighter;
+    margin:0;
+    transition: .5s;
+}
+input[type=submit]:hover, .registrarse-button:hover{
+    color:rgb(236, 236, 236);
+    background-color:var(--azul);
+    transition: .5s;
+}
+.olvide{
+    color:var(--azul);
     display:block;
     cursor:pointer;
     text-align: left;
+}
+.olvide::after{
+    color:var(--azul);
 }
 p{
     font-size:smaller;
