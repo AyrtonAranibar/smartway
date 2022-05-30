@@ -17,15 +17,21 @@ class UsuariosController extends Controller{
     }
     public function crearUsuario(){
         
-        return view('usuarios/usuarios_create');
+        $datos['cabecera']=view('base/header');
+        $datos['pie']=view('base/footer');
+        return view('usuarios/usuarios_create', $datos);
     }
     public function editarUsuarios(){
         
-        return view('usuarios/usuarios_edit');
+        $datos['cabecera']=view('base/header');
+        $datos['pie']=view('base/footer');
+        return view('usuarios/usuarios_edit', $datos);
     }
     public function verUsuarios(){
         
-        return view('usuarios/usuarios_view');
+        $datos['cabecera']=view('base/header');
+        $datos['pie']=view('base/footer');
+        return view('usuarios/usuarios_view', $datos);
     }
 
 }

@@ -22,8 +22,27 @@
         <li class="nav-item">
           <a class="nav-link text-light" href="<?= base_url()?>/listar_vehiculos">Vehículos <i class="fa fa-bus" aria-hidden="true"></i></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="<?= base_url()?>/listar_usuarios">Usuarios <i class="fa fa-users" aria-hidden="true"></i></a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Usuarios <i class="fa fa-users" aria-hidden="true"></i>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="<?= base_url()?>/listar_usuarios">Lista</a></li>
+            <li><a class="dropdown-item" href="<?= base_url()?>/crear_usuario">Crear</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Clientes <i class="fa fa-users" aria-hidden="true"></i>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="<?= base_url()?>/listar_clientes">Lista</a></li>
+            <li><a class="dropdown-item" href="<?= base_url()?>/crear_cliente">Crear</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled text-light" href="#" tabindex="-1" aria-disabled="true">Proximamente...</a>
