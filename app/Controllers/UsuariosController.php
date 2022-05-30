@@ -7,20 +7,31 @@ use App\Models\Usuarios;
 
 class UsuariosController extends Controller{
     public function index(){
-        
-        return view('usuarios/usuarios_list');
+        $usuarios = new Usuarios();
+        $datos['usuarios'] = $usuarios->orderBy('id','ASC')->findAll();
+
+        $datos['cabecera']=view('base/header');
+        $datos['pie']=view('base/footer');
+
+        return view('usuarios/usuarios_list' , $datos);
     }
     public function crearUsuario(){
         
-        return view('usuarios/usuarios_create');
+        $datos['cabecera']=view('base/header');
+        $datos['pie']=view('base/footer');
+        return view('usuarios/usuarios_create', $datos);
     }
     public function editarUsuarios(){
         
-        return view('usuarios/usuarios_edit');
+        $datos['cabecera']=view('base/header');
+        $datos['pie']=view('base/footer');
+        return view('usuarios/usuarios_edit', $datos);
     }
     public function verUsuarios(){
         
-        return view('usuarios/usuarios_view');
+        $datos['cabecera']=view('base/header');
+        $datos['pie']=view('base/footer');
+        return view('usuarios/usuarios_view', $datos);
     }
 
 }

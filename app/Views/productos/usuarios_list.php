@@ -1,6 +1,6 @@
 <?=$cabecera?>
 
-<h1>Lista de Usuarios</h1>
+<h1>Lista de usuarios</h1>
     <div class="container">
         <table class="table table-light">
             <thead class="thead-light">

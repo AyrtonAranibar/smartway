@@ -16,14 +16,23 @@
             <label for="apellidos">Apellidos</label>
             <input type="text" id="apellidos" name="apellidos" placeholder="Castillo Hualpa" autocomplete="off" required >
             <label for="correo">Correo</label>
-            <input type="text" id="correo" name="correo" placeholder="ejemplo@mail.com" autocomplete="off" required >
+            <input type="text" id="correo" name="correo" placeholder="ejemplo@mail.com" autocomplete="off" value="" required >
             <label for="contrasena">Contraseña</label>
-            <input type="password" id="contrasena" name="contrasena" placeholder="************" autocomplete="off" required ><br>
-            <a class="olvide"><p>olvidé mi contraseña</p></a>
+            <input type="password" id="contrasena" name="contrasena" placeholder="************" autocomplete="off" value=""  required >
+            <label for="tipo">Tipo</label>
+            <select name="tipo" id="tipo" placeholder="selecciona una opcion" required>
+                <option value="1">Administrador</option>
+                <option value="2">Chofer</option>
+            </select>
+            <br>
             <div class="buttons-content">
-            <input type="submit"><a href="<?php echo base_url() ?>/registrarse" class="registrarse-button">Registrarse</a>
+            <input type="submit"><a href="<?php echo base_url() ?>/ingresar" class="registrarse-button">Atrás</a>
             </div>
         </form>
     </div>
 </body>
 </html>
+<script>
+    window.addEventListener('load', (event) => {
+    });
+</script>

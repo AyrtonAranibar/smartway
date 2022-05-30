@@ -7,5 +7,5 @@ class Vehiculos extends Model{
     protected $table      = 'vehiculos';
     
     protected $primaryKey = 'id';
-    protected $allowedFields = ['nombre_vehiculo','imagen'];
+    protected $allowedFields   = ['nombre_vehiculo','imagen','activo','creado_fecha'];
 }

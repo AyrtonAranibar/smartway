@@ -17,13 +17,7 @@ body{
     border-radius:1em;
     box-shadow: 0 8px 16px 0 rgba(255,255,255,.5);
 }
-input{
-    background:var(--azul);
-    border-radius:3px;
-    margin-bottom: 5px;
-    font-weight:lighter;
 
-}
 h4{
     color:var(--azul);
     text-align:center;
@@ -31,8 +25,9 @@ h4{
     font-weight:lighter;
 }
 label{
+    display: block;
     color:var(--azul);
-    margin-bottom: 5px;
+    margin-bottom: 3px;
     font-weight:lighter;
     font-size: large;
     font-weight:lighter;
@@ -41,11 +36,20 @@ label{
     display: flex;
     justify-content:space-between;
 }
-input[type=text],input[type=password]{
+input[type=text],input[type=password], select{
+    background:var(--azul);
+    border-radius:3px;
+    margin-bottom: 5px;
+    font-weight:lighter;
+    padding: 5px 3px;
     width: 100%;
+    background-color:var(--azul);
     color:rgb(236, 236, 236);
 }
 input[type=submit], .registrarse-button{
+    margin:0;
+    margin-top:1em;
+    margin-bottom:10px;
     text-decoration: none;
     background-color:rgb(236, 236, 236);
     color: var(--azul);
@@ -53,7 +57,6 @@ input[type=submit], .registrarse-button{
     padding:5px;
     border-radius:3px;
     font-weight: lighter;
-    margin:0;
     transition: .5s;
 }
 input[type=submit]:hover, .registrarse-button:hover{

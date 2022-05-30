@@ -8,9 +8,11 @@ class VehiculosController extends Controller{
 
     public function index(){
         $vehiculo = new Vehiculos();
-        $datos['vehiculos'] = $vehiculo->orderBy('id','ASC')->findAll;
+        $datos['vehiculos'] = $vehiculo->orderBy('id','ASC')->findAll();
+
+        $datos['cabecera']=view('base/header');
+        $datos['pie']=view('base/footer');
         return view('vehiculos/vehiculos_list',$datos);
-        var_dump($datos);
     }
     public function crearVehiculos(){
         
