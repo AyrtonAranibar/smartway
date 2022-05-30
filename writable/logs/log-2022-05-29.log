@@ -1,0 +1,20 @@
+CRITICAL - 2022-05-29 03:24:36 --> Undefined variable $datos
+#0 C:\xampp8\htdocs\smartway\app\Views\usuarios\usuarios_list.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp8\\htdoc...', 10)
+#1 C:\xampp8\htdocs\smartway\system\View\View.php(210): include('C:\\xampp8\\htdoc...')
+#2 C:\xampp8\htdocs\smartway\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp8\htdocs\smartway\system\Common.php(1089): CodeIgniter\View\View->render('usuarios/usuari...', Array, true)
+#4 C:\xampp8\htdocs\smartway\app\Controllers\UsuariosController.php(12): view('usuarios/usuari...', Array)
+#5 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(832): App\Controllers\UsuariosController->index()
+#6 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuariosController))
+#7 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp8\htdocs\smartway\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-05-29 17:50:33 --> Table 'route_app_database.users' doesn't exist
+CRITICAL - 2022-05-29 17:50:33 --> Call to a member function getResult() on bool
+#0 C:\xampp8\htdocs\smartway\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#1 C:\xampp8\htdocs\smartway\app\Controllers\UsuariosController.php(11): CodeIgniter\BaseModel->findAll()
+#2 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(832): App\Controllers\UsuariosController->index()
+#3 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuariosController))
+#4 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp8\htdocs\smartway\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}

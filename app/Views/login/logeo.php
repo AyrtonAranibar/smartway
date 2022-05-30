@@ -17,7 +17,7 @@
             <input type="password" id="contrasena" name="contrasena" placeholder="************" autocomplete="off"><br>
             <a class="olvide"><p>olvidé mi contraseña</p></a>
             <div class="buttons-content">
-            <input type="submit"><a href="<?php echo base_url() ?>/registrarse" class="registrarse-button">Registrarse</a>
+            <input type="submit" value="Ingresar"><a href="<?php echo base_url() ?>/registrarse" class="registrarse-button">Registrarse</a>
             </div>
         </form>
     </div>

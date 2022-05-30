@@ -7,8 +7,9 @@ use App\Models\Usuarios;
 
 class UsuariosController extends Controller{
     public function index(){
-        
-        return view('usuarios/usuarios_list');
+        $usuarios = new Usuarios();
+        $datos['usuarios'] = $usuarios->orderBy('id','ASC')->findAll();
+        return view('usuarios/usuarios_list' , $datos);
     }
     public function crearUsuario(){
         
