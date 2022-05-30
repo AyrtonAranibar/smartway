@@ -9,6 +9,10 @@ class UsuariosController extends Controller{
     public function index(){
         $usuarios = new Usuarios();
         $datos['usuarios'] = $usuarios->orderBy('id','ASC')->findAll();
+
+        $datos['cabecera']=view('base/header');
+        $datos['pie']=view('base/footer');
+
         return view('usuarios/usuarios_list' , $datos);
     }
     public function crearUsuario(){
