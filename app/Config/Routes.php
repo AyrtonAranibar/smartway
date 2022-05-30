@@ -62,3 +62,5 @@ $routes->get('listar_vehiculos', 'VehiculosController::index');
 $routes->get('crear_vehiculo', 'VehiculosController::crearVehiculos');
 $routes->get('editar_vehiculos', 'VehiculosController::editarVehiculos');
 $routes->get('ver_vehiculos', 'VehiculosController::verVehiculos');
+//pedidos
+$routes->get('listar_pedidos', 'PedidosController::index');

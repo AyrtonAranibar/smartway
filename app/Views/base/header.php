@@ -17,12 +17,14 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link text-light" href="#">Pedidos <i class="fa fa-cubes" aria-hidden="true"></i></a>
+          <a class="nav-link text-light" href="<?= base_url()?>/listar_pedidos">Pedidos <i class="fa fa-cubes" aria-hidden="true"></i></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="#">Vehículos <i class="fa fa-bus" aria-hidden="true"></i></a>
+          <a class="nav-link text-light" href="<?= base_url()?>/listar_vehiculos">Vehículos <i class="fa fa-bus" aria-hidden="true"></i></a>
         </li>
-        
+        <li class="nav-item">
+          <a class="nav-link text-light" href="<?= base_url()?>/listar_usuarios">Usuarios <i class="fa fa-users" aria-hidden="true"></i></a>
+        </li>
         <li class="nav-item">
           <a class="nav-link disabled text-light" href="#" tabindex="-1" aria-disabled="true">Proximamente...</a>
         </li>
