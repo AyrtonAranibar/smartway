@@ -35,7 +35,7 @@ class Database extends Config
         'hostname' => 'localhost',
         'username' => 'root',
         'password' => '',
-        'database' => 'smartway_db',
+        'database' => 'route_app_database',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,

@@ -1,33 +1,49 @@
 <?=$cabecera?>
 
-<h1>Lista de Usuarios</h1>
-    <div class="container">
-        <table class="table table-light">
-            <thead class="thead-light">
+<h1 class="mb-5">Lista de Usuarios</h1>
+    <div class="container-fluid">
+        <table class="table table-hover table-light">
+            <thead class="thead-light table-dark ">
                 <tr>
                     <th>Nombre de usuario</th>
-                    <th>Contraseña</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>Tipo</th>
                     <th>Email</th>
-                    <th>Activo</th>
                     <th>Description</th>
                     <th>Imagen</th>
                     <th>Creado</th> 
                     <th>Ciudad</th>
-                    <th>Accion</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach($usuarios as $usuario):?>
                 <tr>
                     <td><?=$usuario['nombre_usuario']?></td>
-                    <td><?=$usuario['contrasenia']?></td>
+                    <td><?=$usuario['nombres']?></td>
+                    <td><?=$usuario['apellidos']?></td>
+                    <td><?php
+                    switch($usuario['tipo_usuario']){
+                        case 0:
+                            echo 'Super admin';
+                            break;
+                        case 1:
+                            echo 'Administrador';
+                            break;
+                        case 2:
+                            echo 'Empleado';
+                            break;
+                        case 3:
+                            echo 'Chofer';
+                            break;
+                        
+                    }
+                    ?></td>
                     <td><?=$usuario['email']?></td>
-                    <td><?=$usuario['activo']?></td>
                     <td><?=$usuario['observacion']?></td>
                     <td><?=$usuario['imagen']?></td>
                     <td><?=$usuario['fecha_creado']?></td>
                     <td><?=$usuario['ciudad']?></td>
-                    <td><button class="btn btn-danger">Eliminar</button><button class="btn btn-primary">Editar</button><button class="btn btn-secondary">ver</button></td>
                 </tr>
                 <?php endforeach;?>
             </tbody>

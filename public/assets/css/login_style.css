@@ -77,3 +77,6 @@ p{
     font-size:smaller;
     text-decoration: underline;
 }
+.alert{
+    cursor:pointer;
+}
