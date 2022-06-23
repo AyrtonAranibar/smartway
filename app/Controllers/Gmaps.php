@@ -30,7 +30,7 @@ class Gmaps extends Controller{
         }
         centreGot = true;';
 
-        $nodes = [['PUNTO 1','-16.3910877835','-71.54671308'],['PUNTO 2','-16.3743452','-71.5665099'],['PUNTO 3','-16.39889','-71.535'], ];
+        $nodes = [['PUNTO A','-16.3910877835','-71.54671308'],['PUNTO B','-16.3743452','-71.5665099'],['PUNTO C','-16.39889','-71.535'], ];
 
         // $config['center'] = '-16.39889, -71.535';
         $config['directionsStart'] = '-16.3910877835, -71.54671308';
@@ -40,78 +40,58 @@ class Gmaps extends Controller{
         $google->initialize($config);
         // $alg = $this->getDistanceBetweenPointsNew($lat1, $lon1,'-16.3743452', '-71.5665099', 'miles');
         // print_r($alg);
-        $marker = array();
-        $marker['position'] = '-16.39889, -71.535';
-        $google->add_marker($marker);
+        // $marker = array();
+        // $marker['position'] = '-16.39889, -71.535';
+        // print_r($marker);
+        // $google->add_marker($marker);
+        // $marker['position'] = '-16.3743452, -71.5665099';
+        // print_r($marker);
+        // $google->add_marker($marker);
+        // $marker['position'] = '-16.39889, -71.535';
+        // print_r($marker);
+        // $google->add_marker($marker);
         $data['map'] = $google->create_map();
 
         $g = new  \App\Libraries\Graph();
 
-        // for ($i=0; $i <= count($nodes) ; $i++) { 
-        //     // print_r($nodes[$i][0]);
-        //     if ($i+1 < count($nodes)) {
-        //         $dis = $this->getDistanceBetweenPointsNew($nodes[$i][1], $nodes[$i][2],$nodes[$i+1][1], $nodes[$i+1][2], 'kilometers');
+        for ($i=0; $i < count($nodes) ; $i++) { 
+          for ($j=0; $j < count($nodes) ; $j++) { 
+            if ($i == $j) {
+              continue;
+            }
+            $dis = $this->getDistanceBetweenPointsNew($nodes[$i][1], $nodes[$i][2],$nodes[$j][1], $nodes[$j][2], 'kilometers');
+            $g->addedge($nodes[$i][0], $nodes[$j][0], $dis);
+          }  
+        }
 
-        //         $g->addedge($nodes[$i][0], $nodes[$i+1][0], $dis);
-        //     }
-            
-        // }
-
-        // // print_r(count($nodes));
-        // for ($i = count($nodes)-1; $i >= 0 ; $i--) { 
-        //     // print_r($nodes[$i][0]);
-        //     if ($i-1 > count($nodes)) {
-        //         $dis = $this->getDistanceBetweenPointsNew($nodes[$i][1], $nodes[$i][2],$nodes[$i-1][1], $nodes[$i+1][2], 'kilometers');
-
-        //         $g->addedge($nodes[$i][0], $nodes[$i-1][0], $dis);
-        //     }
-            
-        // }
-
-
-
-        $g->addedge("PUNTO A", "PUNTO B", $this->getDistanceBetweenPointsNew($nodes[0][1], $nodes[0][2],$nodes[1][1], $nodes[1][2], 'kilometers'));
-        $g->addedge("PUNTO A", "PUNTO C", $this->getDistanceBetweenPointsNew($nodes[0][1], $nodes[0][2],$nodes[2][1], $nodes[2][2], 'kilometers'));
-        $g->addedge("PUNTO B", "PUNTO C", $this->getDistanceBetweenPointsNew($nodes[1][1], $nodes[1][2],$nodes[2][1], $nodes[2][2], 'kilometers'));
-        $g->addedge("PUNTO C", "PUNTO A", $this->getDistanceBetweenPointsNew($nodes[2][1], $nodes[2][2],$nodes[0][1], $nodes[0][2], 'kilometers'));
-        // $g->addedge("a", "d", 1);
-
-        // $g->addedge("b", "a", 74);
-        // $g->addedge("b", "c", 2);
-        // $g->addedge("b", "e", 12);
-
-        // $g->addedge("c", "b", 12);
-        // $g->addedge("c", "j", 12);
-        // $g->addedge("c", "f", 74);
-
-        // $g->addedge("d", "g", 22);
-        // $g->addedge("d", "e", 32);
-
-        // $g->addedge("e", "h", 33);
-        // $g->addedge("e", "d", 66);
-        // $g->addedge("e", "f", 76);
-
-        // $g->addedge("f", "j", 21);
-        // $g->addedge("f", "i", 11);
-
-        // $g->addedge("g", "c", 12);
-        // $g->addedge("g", "h", 10);
-
-        // $g->addedge("h", "g", 2);
-        // $g->addedge("h", "i", 72);
-
-        // $g->addedge("i", "j", 7);
-        // $g->addedge("i", "f", 31);
-        // $g->addedge("i", "h", 18);
-
-        // $g->addedge("j", "f", 8);
+        // $g->addedge("PUNTO A", "PUNTO B", $this->getDistanceBetweenPointsNew($nodes[0][1], $nodes[0][2],$nodes[1][1], $nodes[1][2], 'kilometers'));
+        // $g->addedge("PUNTO A", "PUNTO C", $this->getDistanceBetweenPointsNew($nodes[0][1], $nodes[0][2],$nodes[2][1], $nodes[2][2], 'kilometers'));
+        // $g->addedge("PUNTO B", "PUNTO C", $this->getDistanceBetweenPointsNew($nodes[1][1], $nodes[1][2],$nodes[2][1], $nodes[2][2], 'kilometers'));
+        // $g->addedge("PUNTO C", "PUNTO A", $this->getDistanceBetweenPointsNew($nodes[2][1], $nodes[2][2],$nodes[0][1], $nodes[0][2], 'kilometers'));
 
 
         list($distances, $prev) = $g->paths_from("PUNTO A");
         
         $path = $g->paths_to($prev, "PUNTO C");
+
+        // $config['directionsStart'] = $nodes[0][1] . ',' . $nodes[0][2];
+        // $config['directionsEnd'] = $nodes[2][1] . ',' . $nodes[2][2];
+        // $config['directionsDivID'] = 'directionsDiv';
+
+        for ($i=0; $i < count($nodes) ; $i++) { 
+          // print_r($path[$i]);
+          $marker = array();
+          $marker['position'] = $nodes[$i][1] . ',' . $nodes[$i][2];
+          $marker['id'] = $i;
+          print_r($marker);
+          $google->add_marker($marker);
+        }
+
+
         
         print_r($path);
+
+        
 
 
         return view('marker.php', $data);

@@ -220,3 +220,9 @@ CRITICAL - 2022-05-23 01:32:18 --> include(../css.php): Failed to open stream: N
 #8 C:\xampp8\htdocs\practica\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #9 C:\xampp8\htdocs\practica\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #10 {main}
+ERROR - 2022-05-23 18:23:12 --> Incorrect table definition; there can be only one auto column and it must be defined as a key
+ERROR - 2022-05-23 18:26:53 --> Incorrect table definition; there can be only one auto column and it must be defined as a key
+ERROR - 2022-05-23 19:59:20 --> Error connecting to the database: Access denied for user '****'@'localhost' (using password: YES)
+ERROR - 2022-05-23 19:59:52 --> Error connecting to the database: Access denied for user '****'@'localhost' (using password: YES)
+ERROR - 2022-05-23 20:00:59 --> Error connecting to the database: Unknown database 'smartwat_db'
+ERROR - 2022-05-23 20:01:23 --> Incorrect table definition; there can be only one auto column and it must be defined as a key
