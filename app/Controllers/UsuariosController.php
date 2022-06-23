@@ -82,17 +82,11 @@ class UsuariosController extends Controller{
                 });
                 }
                 centreGot = true;';
-
                 $nodes = [['PUNTO 1','-16.3910877835','-71.54671308'],['PUNTO 2','-16.3743452','-71.5665099'],['PUNTO 3','-16.39889','-71.535'], ];
-
-                // $config['center'] = '-16.39889, -71.535';
-                $config['directionsStart'] = '-16.3910877835, -71.54671308';
-                $config['directionsEnd'] = '-16.3743452, -71.5665099';
+                //$config['directionsStart'] = '-16.3910877835, -71.54671308';
+                //$config['directionsEnd'] = '-16.3743452, -71.5665099';
                 $config['directionsDivID'] = 'directionsDiv';
-                // $config['zoom'] = 'auto';
                 $google->initialize($config);
-                // $alg = $this->getDistanceBetweenPointsNew($lat1, $lon1,'-16.3743452', '-71.5665099', 'miles');
-                // print_r($alg);
                 $marker = array();
                 $marker['position'] = '-16.39889, -71.535';
                 $google->add_marker($marker);
