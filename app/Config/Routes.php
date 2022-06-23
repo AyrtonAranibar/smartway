@@ -49,13 +49,28 @@ $routes->get('/', 'Home::index');
 if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
+//login
+$routes->get('ingresar', 'Home::logeo');
+$routes->get('registrarse', 'Home::autentificacion');
+$routes->post('guardar_usuario', 'UsuariosController::guardarUsuario');
+$routes->post('ingresar_usuario', 'UsuariosController::ingresarUsuario');
 //usuarios
 $routes->get('listar_usuarios', 'UsuariosController::index');
 $routes->get('crear_usuario', 'UsuariosController::crearUsuario');
 $routes->get('editar_usuarios', 'UsuariosController::editarUsuarios');
 $routes->get('ver_usuarios', 'UsuariosController::verUsuarios');
+//clientes
+$routes->get('listar_clientes', 'ClientesController::index');
+$routes->get('crear_cliente', 'ClientesController::crearCliente');
+$routes->get('editar_clientes', 'ClientesController::editarClientes');
+$routes->get('ver_clientes', 'ClientesController::verClientes');
 //vehiculos
 $routes->get('listar_vehiculos', 'VehiculosController::index');
 $routes->get('crear_vehiculo', 'VehiculosController::crearVehiculos');
 $routes->get('editar_vehiculos', 'VehiculosController::editarVehiculos');
 $routes->get('ver_vehiculos', 'VehiculosController::verVehiculos');
+//pedidos
+$routes->get('listar_pedidos', 'PedidosController::index');
+
+
+

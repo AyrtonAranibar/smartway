@@ -1,0 +1,146 @@
+CRITICAL - 2022-05-29 03:24:36 --> Undefined variable $datos
+#0 C:\xampp8\htdocs\smartway\app\Views\usuarios\usuarios_list.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp8\\htdoc...', 10)
+#1 C:\xampp8\htdocs\smartway\system\View\View.php(210): include('C:\\xampp8\\htdoc...')
+#2 C:\xampp8\htdocs\smartway\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp8\htdocs\smartway\system\Common.php(1089): CodeIgniter\View\View->render('usuarios/usuari...', Array, true)
+#4 C:\xampp8\htdocs\smartway\app\Controllers\UsuariosController.php(12): view('usuarios/usuari...', Array)
+#5 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(832): App\Controllers\UsuariosController->index()
+#6 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuariosController))
+#7 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp8\htdocs\smartway\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-05-29 17:50:33 --> Table 'route_app_database.users' doesn't exist
+CRITICAL - 2022-05-29 17:50:33 --> Call to a member function getResult() on bool
+#0 C:\xampp8\htdocs\smartway\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#1 C:\xampp8\htdocs\smartway\app\Controllers\UsuariosController.php(11): CodeIgniter\BaseModel->findAll()
+#2 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(832): App\Controllers\UsuariosController->index()
+#3 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuariosController))
+#4 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp8\htdocs\smartway\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-05-29 23:12:07 --> Invalid file: pedidos/usuarios_list.php
+#0 C:\xampp8\htdocs\smartway\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pedidos/usuario...')
+#1 C:\xampp8\htdocs\smartway\system\Common.php(1089): CodeIgniter\View\View->render('pedidos/usuario...', Array, true)
+#2 C:\xampp8\htdocs\smartway\app\Controllers\PedidosController.php(15): view('pedidos/usuario...', Array)
+#3 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(832): App\Controllers\PedidosController->index()
+#4 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidosController))
+#5 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp8\htdocs\smartway\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-29 23:12:57 --> Invalid file: pedidos/usuarios_list.php
+#0 C:\xampp8\htdocs\smartway\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pedidos/usuario...')
+#1 C:\xampp8\htdocs\smartway\system\Common.php(1089): CodeIgniter\View\View->render('pedidos/usuario...', Array, true)
+#2 C:\xampp8\htdocs\smartway\app\Controllers\PedidosController.php(15): view('pedidos/usuario...', Array)
+#3 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(832): App\Controllers\PedidosController->index()
+#4 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidosController))
+#5 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp8\htdocs\smartway\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-29 23:15:55 --> Invalid file: pedidos/usuarios_list.php
+#0 C:\xampp8\htdocs\smartway\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pedidos/usuario...')
+#1 C:\xampp8\htdocs\smartway\system\Common.php(1089): CodeIgniter\View\View->render('pedidos/usuario...', Array, true)
+#2 C:\xampp8\htdocs\smartway\app\Controllers\PedidosController.php(16): view('pedidos/usuario...', Array)
+#3 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(832): App\Controllers\PedidosController->index()
+#4 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidosController))
+#5 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp8\htdocs\smartway\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-05-29 23:16:40 --> Undefined variable $usuarios
+#0 C:\xampp8\htdocs\smartway\app\Views\pedidos\pedidos_list.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp8\\htdoc...', 18)
+#1 C:\xampp8\htdocs\smartway\system\View\View.php(210): include('C:\\xampp8\\htdoc...')
+#2 C:\xampp8\htdocs\smartway\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp8\htdocs\smartway\system\Common.php(1089): CodeIgniter\View\View->render('pedidos/pedidos...', Array, true)
+#4 C:\xampp8\htdocs\smartway\app\Controllers\PedidosController.php(16): view('pedidos/pedidos...', Array)
+#5 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(832): App\Controllers\PedidosController->index()
+#6 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidosController))
+#7 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp8\htdocs\smartway\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-29 23:49:32 --> Undefined variable $cabecera
+#0 C:\xampp8\htdocs\smartway\app\Views\vehiculos\vehiculos_list.php(1): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp8\\htdoc...', 1)
+#1 C:\xampp8\htdocs\smartway\system\View\View.php(210): include('C:\\xampp8\\htdoc...')
+#2 C:\xampp8\htdocs\smartway\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp8\htdocs\smartway\system\Common.php(1089): CodeIgniter\View\View->render('vehiculos/vehic...', Array, true)
+#4 C:\xampp8\htdocs\smartway\app\Controllers\VehiculosController.php(12): view('vehiculos/vehic...', Array)
+#5 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(832): App\Controllers\VehiculosController->index()
+#6 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VehiculosController))
+#7 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp8\htdocs\smartway\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-29 23:49:57 --> foreach() argument must be of type array|object, null given
+#0 C:\xampp8\htdocs\smartway\app\Views\vehiculos\vehiculos_list.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argum...', 'C:\\xampp8\\htdoc...', 16)
+#1 C:\xampp8\htdocs\smartway\system\View\View.php(210): include('C:\\xampp8\\htdoc...')
+#2 C:\xampp8\htdocs\smartway\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp8\htdocs\smartway\system\Common.php(1089): CodeIgniter\View\View->render('vehiculos/vehic...', Array, true)
+#4 C:\xampp8\htdocs\smartway\app\Controllers\VehiculosController.php(16): view('vehiculos/vehic...', Array)
+#5 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(832): App\Controllers\VehiculosController->index()
+#6 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VehiculosController))
+#7 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp8\htdocs\smartway\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-29 23:50:57 --> foreach() argument must be of type array|object, null given
+#0 C:\xampp8\htdocs\smartway\app\Views\vehiculos\vehiculos_list.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argum...', 'C:\\xampp8\\htdoc...', 16)
+#1 C:\xampp8\htdocs\smartway\system\View\View.php(210): include('C:\\xampp8\\htdoc...')
+#2 C:\xampp8\htdocs\smartway\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp8\htdocs\smartway\system\Common.php(1089): CodeIgniter\View\View->render('vehiculos/vehic...', Array, true)
+#4 C:\xampp8\htdocs\smartway\app\Controllers\VehiculosController.php(16): view('vehiculos/vehic...', Array)
+#5 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(832): App\Controllers\VehiculosController->index()
+#6 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VehiculosController))
+#7 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp8\htdocs\smartway\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-29 23:52:41 --> foreach() argument must be of type array|object, null given
+#0 C:\xampp8\htdocs\smartway\app\Views\vehiculos\vehiculos_list.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argum...', 'C:\\xampp8\\htdoc...', 16)
+#1 C:\xampp8\htdocs\smartway\system\View\View.php(210): include('C:\\xampp8\\htdoc...')
+#2 C:\xampp8\htdocs\smartway\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp8\htdocs\smartway\system\Common.php(1089): CodeIgniter\View\View->render('vehiculos/vehic...', Array, true)
+#4 C:\xampp8\htdocs\smartway\app\Controllers\VehiculosController.php(16): view('vehiculos/vehic...', Array)
+#5 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(832): App\Controllers\VehiculosController->index()
+#6 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VehiculosController))
+#7 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp8\htdocs\smartway\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-29 23:55:37 --> foreach() argument must be of type array|object, null given
+#0 C:\xampp8\htdocs\smartway\app\Views\vehiculos\vehiculos_list.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argum...', 'C:\\xampp8\\htdoc...', 16)
+#1 C:\xampp8\htdocs\smartway\system\View\View.php(210): include('C:\\xampp8\\htdoc...')
+#2 C:\xampp8\htdocs\smartway\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp8\htdocs\smartway\system\Common.php(1089): CodeIgniter\View\View->render('vehiculos/vehic...', Array, true)
+#4 C:\xampp8\htdocs\smartway\app\Controllers\VehiculosController.php(16): view('vehiculos/vehic...', Array)
+#5 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(832): App\Controllers\VehiculosController->index()
+#6 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VehiculosController))
+#7 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp8\htdocs\smartway\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-29 23:55:38 --> foreach() argument must be of type array|object, null given
+#0 C:\xampp8\htdocs\smartway\app\Views\vehiculos\vehiculos_list.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argum...', 'C:\\xampp8\\htdoc...', 16)
+#1 C:\xampp8\htdocs\smartway\system\View\View.php(210): include('C:\\xampp8\\htdoc...')
+#2 C:\xampp8\htdocs\smartway\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp8\htdocs\smartway\system\Common.php(1089): CodeIgniter\View\View->render('vehiculos/vehic...', Array, true)
+#4 C:\xampp8\htdocs\smartway\app\Controllers\VehiculosController.php(16): view('vehiculos/vehic...', Array)
+#5 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(832): App\Controllers\VehiculosController->index()
+#6 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VehiculosController))
+#7 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp8\htdocs\smartway\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-29 23:55:39 --> foreach() argument must be of type array|object, null given
+#0 C:\xampp8\htdocs\smartway\app\Views\vehiculos\vehiculos_list.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argum...', 'C:\\xampp8\\htdoc...', 16)
+#1 C:\xampp8\htdocs\smartway\system\View\View.php(210): include('C:\\xampp8\\htdoc...')
+#2 C:\xampp8\htdocs\smartway\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp8\htdocs\smartway\system\Common.php(1089): CodeIgniter\View\View->render('vehiculos/vehic...', Array, true)
+#4 C:\xampp8\htdocs\smartway\app\Controllers\VehiculosController.php(16): view('vehiculos/vehic...', Array)
+#5 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(832): App\Controllers\VehiculosController->index()
+#6 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VehiculosController))
+#7 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp8\htdocs\smartway\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-29 23:56:05 --> foreach() argument must be of type array|object, null given
+#0 C:\xampp8\htdocs\smartway\app\Views\vehiculos\vehiculos_list.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argum...', 'C:\\xampp8\\htdoc...', 16)
+#1 C:\xampp8\htdocs\smartway\system\View\View.php(210): include('C:\\xampp8\\htdoc...')
+#2 C:\xampp8\htdocs\smartway\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp8\htdocs\smartway\system\Common.php(1089): CodeIgniter\View\View->render('vehiculos/vehic...', Array, true)
+#4 C:\xampp8\htdocs\smartway\app\Controllers\VehiculosController.php(16): view('vehiculos/vehic...', Array)
+#5 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(832): App\Controllers\VehiculosController->index()
+#6 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VehiculosController))
+#7 C:\xampp8\htdocs\smartway\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp8\htdocs\smartway\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}

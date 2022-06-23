@@ -8,4 +8,12 @@ class Home extends BaseController
     {
         return view('menu.php');
     }
+    public function logeo()
+    {
+        return view('login/logeo.php');
+    }
+    public function autentificacion()
+    {
+        return view('login/registrarse.php');
+    }
 }

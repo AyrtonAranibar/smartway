@@ -7,9 +7,12 @@ use App\Models\Vehiculos;
 class VehiculosController extends Controller{
 
     public function index(){
+        $vehiculo = new Vehiculos();
+        $datos['vehiculos'] = $vehiculo->orderBy('id','ASC')->findAll();
 
-        return view('vehiculos/vehiculos_list');
-
+        $datos['cabecera']=view('base/header');
+        $datos['pie']=view('base/footer');
+        return view('vehiculos/vehiculos_list',$datos);
     }
     public function crearVehiculos(){
         

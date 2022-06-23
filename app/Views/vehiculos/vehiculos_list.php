@@ -1,12 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vehiculos</title>
-    <?php include('../css.php')?>
-</head>
-<body>
-    lista de Vehiculos
-</body>
-</html>
+<?=$cabecera?>
+
+<h1>Lista de Vehiculos</h1>
+    <div class="container">
+        <table class="table table-light">
+            <thead class="thead-light">
+                <tr>
+                    <th>Nombre</th> 
+                    <th>Imagen</th>
+                    <th>Activo</th>
+                    <th>Fecha creación</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach($vehiculos as $vehiculo):?>
+                <tr>
+                    <td><?=$vehiculo['nombre_vehiculo']?></td>
+                    <td><?=$vehiculo['imagen']?></td>
+                    <td><?=$vehiculo['activo']?></td>
+                    <td><?=$vehiculo['creado_fecha']?></td>
+                    <td><button class="btn btn-danger">Eliminar</button><button class="btn btn-primary">Editar</button><button class="btn btn-secondary">ver</button></td>
+                </tr>
+                <?php endforeach;?>
+            </tbody>
+        </table>
+    </div>
+    
+    <?=$pie?>
