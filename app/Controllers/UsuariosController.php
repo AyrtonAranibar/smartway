@@ -71,44 +71,39 @@ class UsuariosController extends Controller{
                 }
                 if($usuario['tipo_usuario']==3){
                 
-                $google = new  \App\Libraries\Googlemaps();
+                    $google = new  \App\Libraries\Googlemaps();
 
-                $config = array();
-                $config['center'] = 'auto';
-                $config['onboundschanged'] = 'if (!centreGot) {
-                var mapCentre = map.getCenter();
-                marker_0.setOptions({
-                position: new google.maps.LatLng(mapCentre.lat(),      mapCentre.lng()) 
-                });
-                }
-                centreGot = true;';
-                $nodes = [['PUNTO 1','-16.3910877835','-71.54671308'],['PUNTO 2','-16.3743452','-71.5665099'],['PUNTO 3','-16.39889','-71.535'], ];
-                //$config['directionsStart'] = '-16.3910877835, -71.54671308';
-                //$config['directionsEnd'] = '-16.3743452, -71.5665099';
-                $config['directionsDivID'] = 'directionsDiv';
-                $google->initialize($config);
-                $marker = array();
-                $marker['position'] = '-16.39889, -71.535';
-                $google->add_marker($marker);
-                $data['map'] = $google->create_map();
+                    $config = array();
+                    $config['center'] = 'auto';
+                    $config['onboundschanged'] = 'if (!centreGot) {
+                    var mapCentre = map.getCenter();
+                    marker_0.setOptions({
+                    position: new google.maps.LatLng(mapCentre.lat(),      mapCentre.lng()) 
+                    });
+                    }
+                    centreGot = true;';
+            
+                    $config['center'] = 'udaipur, rajasthan, india';
+                    $config['zoom'] = 'auto';
+                    $config['directions'] = TRUE;
+                    $config['directionsMode'] = "DRIVING"; //modes: DRIVING WALKING BICYCLING
+                    $config['directionsStart'] = '-16.391250525, -71.542904013';
+                    $config['directionsWaypointArray'] = array(//7 decimales
+                    "-16.401342781446903, -71.55321621432907",
+                    "-16.375288483305315, -71.561128978274",
+                    "-16.351376699025202, -71.55806499666011",
+                    "-16.348994186542097, -71.54077233159111"
+                    );
+                    $config['directionsEnd'] = '-16.391250525, -71.542904013';
+                    $config['directionsDivID'] = 'directionsDiv';
+                    $google->initialize($config);
+                    $mapa['map'] = $google->create_map();
+            
+                    // $g = new  \App\Libraries\Graph();
+            
+            
 
-                $g = new  \App\Libraries\Graph();
-
-
-                $g->addedge("PUNTO A", "PUNTO B", $this->getDistanceBetweenPointsNew($nodes[0][1], $nodes[0][2],$nodes[1][1], $nodes[1][2], 'kilometers'));
-                $g->addedge("PUNTO A", "PUNTO C", $this->getDistanceBetweenPointsNew($nodes[0][1], $nodes[0][2],$nodes[2][1], $nodes[2][2], 'kilometers'));
-                $g->addedge("PUNTO B", "PUNTO C", $this->getDistanceBetweenPointsNew($nodes[1][1], $nodes[1][2],$nodes[2][1], $nodes[2][2], 'kilometers'));
-                $g->addedge("PUNTO C", "PUNTO A", $this->getDistanceBetweenPointsNew($nodes[2][1], $nodes[2][2],$nodes[0][1], $nodes[0][2], 'kilometers'));
-
-
-                list($distances, $prev) = $g->paths_from("PUNTO A");
-                
-                $path = $g->paths_to($prev, "PUNTO C");
-                
-                print_r($path);
-
-
-                return view('marker.php', $data);
+                return view('marker.php', $mapa);
                 }
             }
         }
@@ -131,6 +126,49 @@ class UsuariosController extends Controller{
             $distance = $distance * 1.609344; 
         } 
         return (round($distance,2)); 
+    }
+    function dibujarMapa(){
+        $google = new  \App\Libraries\Googlemaps();
+
+        $config = array();
+        $config['center'] = 'auto';
+        $config['onboundschanged'] = 'if (!centreGot) {
+        var mapCentre = map.getCenter();
+        marker_0.setOptions({
+        position: new google.maps.LatLng(mapCentre.lat(),      mapCentre.lng()) 
+        });
+        }
+        centreGot = true;';
+
+        $nodes = [['PUNTO 1','-16.3910877835','-71.54671308'],['PUNTO 2','-16.3743452','-71.5665099'],['PUNTO 3','-16.39889','-71.535'], ];
+
+        // $config['center'] = '-16.39889, -71.535';
+        $config['directionsStart'] = '-16.3910877835, -71.54671308';
+        $config['directionsEnd'] = '-16.3743452, -71.5665099';
+        $config['directionsDivID'] = 'directionsDiv';
+        // $config['zoom'] = 'auto';
+        $google->initialize($config);
+        $marker = array();
+        $marker['position'] = '-16.39889, -71.535';
+        $google->add_marker($marker);
+        $data['map'] = $google->create_map();
+
+        $g = new  \App\Libraries\Graph();
+
+
+        $g->addedge("PUNTO A", "PUNTO B", $this->getDistanceBetweenPointsNew($nodes[0][1], $nodes[0][2],$nodes[1][1], $nodes[1][2], 'kilometers'));
+        $g->addedge("PUNTO A", "PUNTO C", $this->getDistanceBetweenPointsNew($nodes[0][1], $nodes[0][2],$nodes[2][1], $nodes[2][2], 'kilometers'));
+        $g->addedge("PUNTO B", "PUNTO C", $this->getDistanceBetweenPointsNew($nodes[1][1], $nodes[1][2],$nodes[2][1], $nodes[2][2], 'kilometers'));
+        $g->addedge("PUNTO C", "PUNTO A", $this->getDistanceBetweenPointsNew($nodes[2][1], $nodes[2][2],$nodes[0][1], $nodes[0][2], 'kilometers'));
+
+
+        list($distances, $prev) = $g->paths_from("PUNTO A");
+        
+        $path = $g->paths_to($prev, "PUNTO C");
+        
+        print_r($path);
+
+        return $data;
     }
     
 }
