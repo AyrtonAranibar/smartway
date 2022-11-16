@@ -9,6 +9,6 @@
     </head>
     <body>
         <?php echo $map['html']; ?>
-        <div id=”directionsDiv”></div>
+        <div id="directionsDiv"></div>
     </body>
 </html>

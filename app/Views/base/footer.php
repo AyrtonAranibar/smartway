@@ -1,6 +1,6 @@
 </div>
     <div class="footer bg-dark">
-      <p class="text-light">©Todos los derechos Inreservados - Ayrton Aranibar y Jasmin Salas</p>
+      <p class="text-light"> </p>
     </div>
     <?php include('js.php')?>
 </body>

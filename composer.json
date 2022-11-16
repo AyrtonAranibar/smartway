@@ -4,8 +4,11 @@
     "description": "The CodeIgniter framework v4",
     "homepage": "https://codeigniter.com",
     "license": "MIT",
+    
     "require": {
-        "php": "^7.3 || ^8.0"
+        "php": "^7.3 || ^8.0",
+        "phpseclib/phpseclib": "~3.0"
+        
     }
     
 }

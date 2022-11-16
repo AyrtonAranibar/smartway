@@ -9,10 +9,10 @@
 </head>
 <body>
     <div class="contenedor">
-        <?php if (empty($respuesta)==false){ ?>
+        <?php if ($mensaje){ ?>
 
         <div id="alerta" class="alert alert-danger" role="alert">
-            <?=$respuesta?>
+            <?=$mensaje?>
             <svg class="bi" width="32" height="32" fill="currentColor">
             <use xlink:href="<?=base_url()?>/assets/bootstrap5/bootstrap-icons/bootstrap-icons.svg#x"/>
             </svg>
