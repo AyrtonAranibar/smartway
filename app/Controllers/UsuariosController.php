@@ -21,6 +21,38 @@ class UsuariosController extends Controller{
         $usuarios = new Usuarios();
         $datos['usuarios'] = $usuarios->where('activo',1)->orderBy('id','ASC')->findAll();
 
+        $json = '{"vehicles":[{"vehicle_id":"my_vehicle","start_address":{"location_id":"berlin","lon":13.406,"lat":52.537}}],"services":[{"id":"hamburg","name":"visit_hamburg","address":{"location_id":"hamburg","lon":9.999,"lat":53.552}},{"id":"munich","name":"visit_munich","address":{"location_id":"munich","lon":11.57,"lat":48.145}},{"id":"cologne","name":"visit_cologne","address":{"location_id":"cologne","lon":6.957,"lat":50.936}},{"id":"frankfurt","name":"visit_frankfurt","address":{"location_id":"frankfurt","lon":8.67,"lat":50.109}}]}';
+        
+        $ch = curl_init();
+
+        // { "points": [[11,10], [22,20]], "profile": "car" }
+
+        $array = [
+            "points" => [[11,10],[22,20]],
+            "profile" => "car"
+        ];
+        
+        $data = json_encode($array);
+
+        $peticion = '{"elevation":false,"out_arrays":["weights", "times"],"from_points":[[-0.087891,51.534377],[-0.090637,51.467697],[-0.171833,51.521241],[-0.211487,51.473685]],"to_points":[[-0.087891,51.534377],[-0.090637,51.467697],[-0.171833,51.521241],[-0.211487,51.473685]],"vehicle":"car"}';
+        // TU LLAVE API DE GRAPH HOPPER
+        curl_setopt($ch, CURLOPT_URL, 'https://graphhopper.com/api/1/matrix?key=4196a830-632e-4a48-acc9-1b590089a1a4');
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data );
+        curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        $response = curl_exec($ch);
+
+        if (curl_errno($ch)) echo curl_error($ch);
+        else $decoded = json_decode($response, true);
+
+        foreach ($decoded as $idex => $value){
+            echo "$index: $value <br>";        
+        }
+
+        curl_close($ch);
+
         $datos['cabecera']=view('base/header');
         $datos['pie']=view('base/footer');
 
@@ -72,8 +104,7 @@ class UsuariosController extends Controller{
         
         //encriptado RSA
         $private = RSA::createKey(2048); //inicializamos RSA y creamos la clave privada con 2048 bits 
-        $private = $private->withPadding(RSA::ENCRYPTION_NONE);//especificamos encription none para poder validar las contraseñas sin pedir la clave privada, ya que encriptar, sin encription none
-        //hace que cifrar un mismo texto, cambie con el tiempo (psdta: igual sale diferente X.X)
+        $private = $private->withPadding(RSA::ENCRYPTION_NONE);
         $public_key = $private->getPublicKey(); //obtenemos la clave publica
     
         
@@ -98,7 +129,7 @@ class UsuariosController extends Controller{
             'ascii_resultante' => $ascii_resultante,
             
         ); 
-        var_dump($datos);
+
         $usuario->insert($datos);
         return view('login/logeo.php');
     }
@@ -135,8 +166,6 @@ class UsuariosController extends Controller{
                     $contraseña = base64_decode($usuario['contrasenia'],false);
                     $contraseña_desencriptada = $private_key->decrypt($contraseña); //desencriptado de contraseña de la base de datos
                     $contraseña_desencriptada_propia = $this->desencriptado_propio( $usuario['nombre_usuario'], $contraseña_desencriptada, $usuario['fecha_creado']);
-                    // $nueva_contraseña = "";
-                    // $nueva_contraseña =  strval($new_contrasenia);
                     if ($contraseña_desencriptada_propia == $contrasena){
                         if($usuario['tipo_usuario'] == 1 or $usuario['tipo_usuario'] == 0){
                             $datos['usuarios'] = $todo_usuarios->orderBy('id','ASC')->findAll();
@@ -164,17 +193,13 @@ class UsuariosController extends Controller{
         
         $respuesta = array(
             'mensaje'            => $mensaje,
-            //'contra_enviada_encrip' => $contra_encrip,
             'usuario_ingresado'     => $username,
             'contra_ingresada'   => $contra_ingresada_desencrip,
             'contra_bd'          => $usuario['contrasenia'],
             'contra_bd_desen'    => $contraseña_desencriptada,
             'contra_desencriptado_propio' => $contraseña_desencriptada_propia,
-            //'usuario_encontrado' => $usuario['nombre_usuario'],
-            
-            //'contrase_son_iguales'        => $password_son_iguales,
         );
-        var_dump($respuesta);
+
         return view('login/logeo.php', $respuesta);
     }
 
