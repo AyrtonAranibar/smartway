@@ -111,6 +111,6 @@ class Gmaps extends Controller{
         } 
         return (round($distance,2)); 
     }
-   
+  
 
 }

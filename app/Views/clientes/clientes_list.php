@@ -10,26 +10,39 @@
                     <th>DNI</th>
                     <th>Observacion</th>
                     <th>Direccion</th>
-                    <th>Latitud</th>
-                    <th>Longitud</th> 
+                    <!-- <th>Latitud</th>
+                    <th>Longitud</th>  -->
                     <th>Email</th>
                     <th>Celular</th>
+                    <th>Entrega</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($clientes as $cliente):?>
+                <?php foreach($cliente as $datos):?>
                 <tr>
-                    <td><?=$cliente['nombres']?></td>
-                    <td><?=$cliente['apellidos']?></td>
-                    <td><?=$cliente['dni']?></td>
-                    <td><?=$cliente['observacion']?></td>
-                    <td><?=$cliente['direccion']?></td>
-                    <td><?=$cliente['latitud']?></td>
-                    <td><?=$cliente['longitud']?></td>
-                    <td><?=$cliente['email']?></td>
-                    <td><?=$cliente['celular']?></td>
-                    <td><button class="btn btn-danger">Eliminar</button><button class="btn btn-primary">Editar</button><button class="btn btn-secondary">ver</button></td>
+                    <td><?=$datos['nombres']?></td>
+                    <td><?=$datos['apellidos']?></td>
+                    <td><?=$datos['dni']?></td>
+                    <td><?=$datos['observacion']?></td>
+                    <td><?=$datos['direccion']?></td>
+                    <!-- <td><?=$datos['latitud']?></td>
+                    <td><?=$datos['longitud']?></td> -->
+                    <td><?=$datos['email']?></td>
+                    <td><?=$datos['celular']?></td>
+                    <td><?php if($datos['activar_entrega']){
+                        echo '<div class="alert alert-success"><strong> Activa </strong></div>';
+                    }else{
+                        echo '<div class="alert alert-warning"><strong> Desactivada </strong></div>';
+
+                    }
+                    ?></td>
+                    <td>
+                    <button class="btn btn-danger">Eliminar</button>
+                    <a href="<?=base_url('editar_cliente/'.$datos['id'])?>" class="btn btn-primary">Editar</a>
+                    
+                    <button class="btn btn-warning">Entrega</button>
+                </td>
                 </tr>
                 <?php endforeach;?>
             </tbody>

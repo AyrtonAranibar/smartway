@@ -62,8 +62,10 @@ $routes->get('ver_usuarios', 'UsuariosController::verUsuarios');
 //clientes
 $routes->get('listar_clientes', 'ClientesController::index');
 $routes->get('crear_cliente', 'ClientesController::crearCliente');
-$routes->get('editar_clientes', 'ClientesController::editarClientes');
-$routes->get('ver_clientes', 'ClientesController::verClientes');
+$routes->post('cliente_creado', 'ClientesController::clienteCreado');
+$routes->get('editar_cliente/(:num)', 'ClientesController::editarCliente/$1');
+$routes->get('ver_clientes/(:num)', 'ClientesController::verClientes/$1');
+$routes->post('guardar_cliente/(:num)', 'ClientesController::guardarCliente/$1');
 //vehiculos
 $routes->get('listar_vehiculos', 'VehiculosController::index');
 $routes->get('crear_vehiculo', 'VehiculosController::crearVehiculos');
@@ -71,6 +73,13 @@ $routes->get('editar_vehiculos', 'VehiculosController::editarVehiculos');
 $routes->get('ver_vehiculos', 'VehiculosController::verVehiculos');
 //pedidos
 $routes->get('listar_pedidos', 'PedidosController::index');
+//optimizacion
+$routes->get('optimizar_rutas', 'ClientesController::optimizarRutas');
+//sede
+$routes->get('sede', 'SedeController::index');
+$routes->get('editar_sede', 'SedeController::editarSede');
+$routes->post('guardar_sede', 'SedeController::guardarSede');
+
 
 
 

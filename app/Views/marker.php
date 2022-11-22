@@ -3,7 +3,7 @@
 <html>
     <head>
         <script type="text/javascript">
-               var centreGot = false;
+            var centreGot = false;
         </script>
         <?php echo $map['js']; ?>
     </head>

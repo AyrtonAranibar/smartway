@@ -21,37 +21,7 @@ class UsuariosController extends Controller{
         $usuarios = new Usuarios();
         $datos['usuarios'] = $usuarios->where('activo',1)->orderBy('id','ASC')->findAll();
 
-        $json = '{"vehicles":[{"vehicle_id":"my_vehicle","start_address":{"location_id":"berlin","lon":13.406,"lat":52.537}}],"services":[{"id":"hamburg","name":"visit_hamburg","address":{"location_id":"hamburg","lon":9.999,"lat":53.552}},{"id":"munich","name":"visit_munich","address":{"location_id":"munich","lon":11.57,"lat":48.145}},{"id":"cologne","name":"visit_cologne","address":{"location_id":"cologne","lon":6.957,"lat":50.936}},{"id":"frankfurt","name":"visit_frankfurt","address":{"location_id":"frankfurt","lon":8.67,"lat":50.109}}]}';
         
-        $ch = curl_init();
-
-        // { "points": [[11,10], [22,20]], "profile": "car" }
-
-        $array = [
-            "points" => [[11,10],[22,20]],
-            "profile" => "car"
-        ];
-        
-        $data = json_encode($array);
-
-        $peticion = '{"elevation":false,"out_arrays":["weights", "times"],"from_points":[[-0.087891,51.534377],[-0.090637,51.467697],[-0.171833,51.521241],[-0.211487,51.473685]],"to_points":[[-0.087891,51.534377],[-0.090637,51.467697],[-0.171833,51.521241],[-0.211487,51.473685]],"vehicle":"car"}';
-        // TU LLAVE API DE GRAPH HOPPER
-        curl_setopt($ch, CURLOPT_URL, 'https://graphhopper.com/api/1/matrix?key=4196a830-632e-4a48-acc9-1b590089a1a4');
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $data );
-        curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-        $response = curl_exec($ch);
-
-        if (curl_errno($ch)) echo curl_error($ch);
-        else $decoded = json_decode($response, true);
-
-        foreach ($decoded as $idex => $value){
-            echo "$index: $value <br>";        
-        }
-
-        curl_close($ch);
 
         $datos['cabecera']=view('base/header');
         $datos['pie']=view('base/footer');
@@ -65,7 +35,6 @@ class UsuariosController extends Controller{
         return view('usuarios/usuarios_create', $datos);
     }
     public function editarUsuarios(){
-        
         $datos['cabecera']=view('base/header');
         $datos['pie']=view('base/footer');
         return view('usuarios/usuarios_edit', $datos);
