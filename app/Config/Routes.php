@@ -66,6 +66,8 @@ $routes->post('cliente_creado', 'ClientesController::clienteCreado');
 $routes->get('editar_cliente/(:num)', 'ClientesController::editarCliente/$1');
 $routes->get('ver_clientes/(:num)', 'ClientesController::verClientes/$1');
 $routes->post('guardar_cliente/(:num)', 'ClientesController::guardarCliente/$1');
+$routes->get('cambiar_estado/(:num)', 'ClientesController::estadoEntrega/$1');
+$routes->get('eliminar_cliente/(:num)', 'ClientesController::eliminarCliente/$1');
 //vehiculos
 $routes->get('listar_vehiculos', 'VehiculosController::index');
 $routes->get('crear_vehiculo', 'VehiculosController::crearVehiculos');

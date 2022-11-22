@@ -30,18 +30,19 @@
                     <td><?=$datos['longitud']?></td> -->
                     <td><?=$datos['email']?></td>
                     <td><?=$datos['celular']?></td>
-                    <td><?php if($datos['activar_entrega']){
+                    <td><?php if($datos['activar_entrega'] == 1){
                         echo '<div class="alert alert-success"><strong> Activa </strong></div>';
                     }else{
                         echo '<div class="alert alert-warning"><strong> Desactivada </strong></div>';
 
                     }
-                    ?></td>
+                    ?>
+                    </td>
                     <td>
-                    <button class="btn btn-danger">Eliminar</button>
+                    <a href="<?=base_url('eliminar_cliente/'.$datos['id'])?>" class="btn btn-danger">Eliminar</a>
                     <a href="<?=base_url('editar_cliente/'.$datos['id'])?>" class="btn btn-primary">Editar</a>
                     
-                    <button class="btn btn-warning">Entrega</button>
+                    <a href="<?=base_url('cambiar_estado/'.$datos['id'])?>" class="btn btn-warning">Entrega</a>
                 </td>
                 </tr>
                 <?php endforeach;?>

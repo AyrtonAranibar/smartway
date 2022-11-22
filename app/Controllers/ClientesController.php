@@ -11,7 +11,7 @@ use App\Models\SedeModel;
 class ClientesController extends Controller{
     public function index(){
         $clientes = new ClientesModel();
-        $datos['cliente'] = $clientes->orderBy('id','ASC')->findAll();
+        $datos['cliente'] = $clientes->orderBy('id','ASC')->where('activo', 1)->findAll();
         $datos['cabecera']=view('base/header');
         $datos['pie']=view('base/footer');
         return view('clientes/clientes_list' , $datos);
@@ -24,6 +24,32 @@ class ClientesController extends Controller{
         return view('clientes/clientes_create', $datos);
     }
 
+    public function estadoEntrega($id){
+        $clientes = new ClientesModel();
+        $cliente = $clientes->where('id', $id)->first();
+        $estado = $cliente['activar_entrega'] == 1 ? 0 : 1;
+        $datos =[
+            'activar_entrega' => $estado
+        ];
+
+        $clientes->update( $id, $datos );
+
+        return $this->index();
+    }
+
+    public function eliminarCliente($id){
+        $clientes = new ClientesModel();
+
+
+        $datos =[
+            'activo'            => 0,
+            'activar_entrega'   => 0
+        ];
+
+        $clientes->update( $id, $datos );
+
+        return $this->index();
+    }
 
     public function clienteCreado(){
         $clientes = new ClientesModel();
@@ -86,6 +112,7 @@ class ClientesController extends Controller{
             'email'  =>  $email,
             'celular'  =>  $celular
         ];
+
         $clientes->update( $id, $datos);
 
         return $this->index();
@@ -157,7 +184,7 @@ class ClientesController extends Controller{
 
     public function generarListaCoordenadas(){
         $clientes = new ClientesModel();
-        $datos['clientes'] = $clientes->where('activo',1)->orderBy('id','ASC')->findAll();
+        $datos['clientes'] = $clientes->where('activo',1)->where('activar_entrega',1)->orderBy('id','ASC')->findAll();
         $coordenadas = array();
         $coordenadas_lat = array();
         $coordenadas_lon = array();
@@ -173,7 +200,7 @@ class ClientesController extends Controller{
 
     public function generarArrayCoordenadas($posicion_local){
         $clientes = new ClientesModel();
-        $datos['clientes'] = $clientes->where('activo',1)->orderBy('id','ASC')->findAll();
+        $datos['clientes'] = $clientes->where('activo',1)->where('activar_entrega',1)->orderBy('id','ASC')->findAll();
         $coordenadas = array();
         $coordenadas_lat = array();
         $coordenadas_lon = array();
