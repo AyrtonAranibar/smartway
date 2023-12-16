@@ -6,14 +6,14 @@ Este proyecto, desarrollado como parte de un trabajo universitario en la UCSM, c
 
 Rutas optimizadas:
 
-![Rutas optimizadas](https://github.com/AyrtonAranibar/smartway/blob/main/app/public/images/project_file/mapa.png)
+![Rutas optimizadas](https://github.com/AyrtonAranibar/smartway/blob/master/app/public/images/project_file/mapa.png)
 
 Lista de clientes:
 
-![Lista de clientes](https://github.com/AyrtonAranibar/smartway/blob/main/app/public/images/project_file/lista_clientes.png)
+![Lista de clientes](https://github.com/AyrtonAranibar/smartway/blob/master/app/public/images/project_file/lista_clientes.png)
 
 Edicion de datos de clientes:
-![Edicion de datos](https://github.com/AyrtonAranibar/smartway/blob/main/app/public/images/project_file/editar_cliente.png)
+![Edicion de datos](https://github.com/AyrtonAranibar/smartway/blob/master/public/images/project_file/editar_cliente.png)
 
 ## Instalación
 
