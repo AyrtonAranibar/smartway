@@ -36,7 +36,7 @@ Se necesita PHP version 7.3 o mayor, con las siguientes extenciones instaladas:
 
 Adiccionalmente, asegurate de que las siguientes extenciones estén habilitadas en tu PHP:
 
-- json (habilitado por defecto - no lo desabilites)
-- xml (habilitado por defecto - no lo desabilites)
+- json (habilitado por defecto - no lo desabilite)
+- xml (habilitado por defecto - no lo desabilite)
 - [mysqlnd](http://php.net/manual/en/mysqlnd.install.php)
 
