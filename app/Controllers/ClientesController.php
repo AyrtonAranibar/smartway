@@ -135,8 +135,7 @@ class ClientesController extends Controller{
         $posicion_longitud = $sede['longitud'];
         $config = array();
         $config['center'] = 'auto';
-        $config['onboundschanged'] = 'if (!centreGot) { var mapCentre = map.getCenter(); marker_0.setOptions({ 
-                                    position: new google.maps.LatLng(mapCentre.lat(),mapCentre.lng()) });}centreGot = true;';
+        
         $config['center'] = $posicion_local[0].','.$posicion_local[1];
         $config['zoom'] = 'auto';
         $config['directions'] = TRUE;
@@ -145,8 +144,8 @@ class ClientesController extends Controller{
         $coordenadas = $this->generarListaCoordenadas();
         //optimizacion
         $ch = curl_init();
-        //tu api key de routeservice optimizacion v1
-        $api_key = "pk.eyJ1Ijoid29sZmdhbmcxIiwiYSI6ImNsYTY2OG80bzFjcXEzb21uNGk5Z25zNW4ifQ.Psv8h5qGk6ipigikuH0IgA";
+        //tu api key de mapbox optimizacion v1
+        $api_key = "pk.eyJ1Ijoid29sZmdhbmcxIiwiYSI6ImNscTZ3dTEwOTEwMngyam9oNmU3eHppM3oifQ.LaHH_2EHeq847LY-qIm9zA";
         $url = 'https://api.mapbox.com/optimized-trips/v1/mapbox/driving-traffic/'.$coordenadas.'?access_token='.$api_key;
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

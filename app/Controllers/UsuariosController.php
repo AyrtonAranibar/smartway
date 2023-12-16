@@ -68,7 +68,7 @@ class UsuariosController extends Controller{
         if(!file_exists($filename)){
             mkdir($filename,0777);
         }  
-
+        
 
         
         //encriptado RSA
@@ -76,9 +76,14 @@ class UsuariosController extends Controller{
         $private = $private->withPadding(RSA::ENCRYPTION_NONE);
         $public_key = $private->getPublicKey(); //obtenemos la clave publica
     
-        
-        mkdir("C:/smartway/".$username."/privatekey/", 0777); //crea la subcarpeta
-        mkdir("C:/smartway/".$username."/publickey/", 0777);
+        $private_dir = "C:/smartway/".$username."/privatekey/";
+        $public_dir = "C:/smartway/".$username."/publickey/";
+        if (!is_dir($private_dir)) {
+            mkdir("C:/smartway/".$username."/privatekey/", 0777); 
+        }
+        if (!is_dir($public_dir)) {
+            mkdir("C:/smartway/".$username."/publickey/", 0777);
+        }
         file_put_contents('C:/smartway/'.$username.'/privatekey/privatekey.pem', $private); //guardado de la clave privada
         file_put_contents('C:/smartway/'.$username.'/publickey/publickey.pem', $public_key); //guardado de la clave privada
         //$signature = $private->sign($mensaje); // contraseña firmada firmado 
@@ -98,7 +103,7 @@ class UsuariosController extends Controller{
             'ascii_resultante' => $ascii_resultante,
             
         ); 
-
+        var_dump($datos);
         $usuario->insert($datos);
         return view('login/logeo.php');
     }
@@ -168,7 +173,7 @@ class UsuariosController extends Controller{
             'contra_bd_desen'    => $contraseña_desencriptada,
             'contra_desencriptado_propio' => $contraseña_desencriptada_propia,
         );
-
+        var_dump($respuesta);
         return view('login/logeo.php', $respuesta);
     }
 
